@@ -1,0 +1,78 @@
+<odoo>
+	<record id="pos_shortcut_form_view" model="ir.ui.view">
+		<field name="name">POS ShortCuts form view</field>
+		<field name="model">pos.shortcuts</field>
+		<field name="arch" type="xml">
+			<form>
+				<sheet>
+					<group string="ShortCuts Name">
+						<field name="name" required="1"/>
+					</group>
+					<group string="Product Screen ShortCuts">
+						<group >
+							<field name="next_screen"/>
+							<field name="customer_screen"/>
+							<field name="search_product"/>
+							<field name="select_quantity"/>
+							<field name="select_discount"/>
+							<field name="select_price"/>
+							<field name="add_customer"/>
+						</group>
+							<group>
+								<field name="select_previous_orderline"/>
+								<field name="select_next_orderline"/>
+								<field name="delete_order"/>
+							</group>
+					</group>
+					<group string="Payment Screen ShortCuts">
+						<field name="other_invoice"/>
+						<field name="payment_method_ids" >
+							<tree editable="bottom">
+								<field name="type"/>
+								<field name="key_code_journals"/>
+							</tree>	
+						</field>
+					</group>
+					<group string="Customer Screen Shortcuts">
+						<field name="select_deselect_customer"/>
+					</group>
+					<group string="Receipt Screen Shortcuts" col="4">
+						<field name="print_receipt"/>
+						<field name="show_next_screen"/>
+					</group>
+					<group string="Common ShortCuts">
+						<group>
+							<field name="back_screen"/>
+							<field name="create_new_order"/>
+							<field name="delete_current_order"/>
+							<field name="ok_button_popup"/>
+							<field name="cancle_button_in_popup"/>
+						</group>
+						<group>
+							<field name="select_next_order"/>
+							<field name="select_previous_order"/>
+							<field name="select_pos_user"/>
+							<field name="refresh_connection"/>
+							<field name="close_connection"/>
+						</group>
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+
+	<record id="pos_shortcut_tree_view" model="ir.ui.view">
+		<field name="name">POS ShortCuts tree view</field>
+		<field name="model">pos.shortcuts</field>
+		<field name="arch" type="xml">
+			<tree>
+				<field name="name"/>
+			</tree>
+		</field>
+	</record>
+	<record id="pos_shortcut_action_view" model="ir.actions.act_window">
+		<field name="name">POS ShortCuts</field>
+		<field name="res_model">pos.shortcuts</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+</odoo>

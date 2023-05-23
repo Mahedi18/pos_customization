@@ -1,0 +1,6 @@
+<odoo>
+	<menuitem id="pos_shortcut_menu"
+		name="Keyboard Shortcuts"
+		parent="point_of_sale.menu_point_root"
+		action="pos_shortcuts.pos_shortcut_action_view"/>
+</odoo>

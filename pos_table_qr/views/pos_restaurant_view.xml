@@ -1,0 +1,17 @@
+<odoo>
+	<record id="pos_restaurant_o2m_view" model="ir.ui.view">
+		<field name="name">Pos Restaurant view</field>
+		<field name="model">restaurant.floor</field>
+		<field name="inherit_id" ref="pos_restaurant.view_restaurant_floor_form" />
+		<field name="arch" type="xml">
+			<xpath expr="//field[@name='table_ids']/tree" position="inside">
+				<field name="qr_code" filename="qr_code_name" readonly="1"/>
+				<field name="qr_code_name" invisible="1"/>
+			</xpath>
+			<xpath expr="//field[@name='table_ids']/form/group" position="inside">
+				<field name="qr_code" filename="qr_code_name" readonly="1"/>
+				<field name="qr_code_name" invisible="1"/>
+			</xpath>
+		</field>
+	</record>
+</odoo>
